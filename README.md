@@ -32,11 +32,43 @@ Order types include: **DELIVERY**, **PICKUP**, and **SUBSCRIPTION**.
 ---
 
 ## 📂 Project Structure
-- `User` entity – Manages customer details
-- `Role` entity – Defines access levels (Admin/User)
-- `Order` entity – Handles order details
-- `OrderType` enum – Classifies orders (DELIVERY, PICKUP, SUBSCRIPTION)
-- `Payment` entity – Stores Razorpay transactions
+- 'Entity'->Manages the database by using Jpa.And in that have multiple Entities.
+- `Enum'->handles Enum related tasks.
+- 'Filter'->handles security based topics.
+- `Repository'->handles data fetching from database.
+- `Service'->handles business logic of the software.
+- 'config'->handles security and cors related topics.
+- 'controller'->Handles Rest-Api's.
+- 'dto'->Handles request and response topics.
+- 'OrderingProjectApplication'->Entry point of the program.
+
+
+## 📡 Example API Usage
+
+### 🔐 Authentication (JWT)
+- **Register User**  
+  `POST /api/auth/register`
+  {
+    "name": "Abdul",
+    "email": "abdul@example.com",
+    "password": "123456"
+    "phone number":"1234567891"
+  }
+
+POST /api/auth/login
+  {
+  "email": "abdul@example.com",
+  "password": "123456"
+}
+
+
+POST /api/orders
+{
+  "orderType": "DELIVERY",
+  "items": [
+    { "id": 1, "quantity": 2 },
+    { "id": 5, "quantity": 1 }
+  ]
 
 ---
 
